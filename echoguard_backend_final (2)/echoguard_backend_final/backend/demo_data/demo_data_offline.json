@@ -1,0 +1,48 @@
+{
+    "examples": [
+        {
+            "id": 1,
+            "claim": "IMD warns cyclone will hit Mumbai in 12 hours",
+            "status": "FALSE",
+            "confidence": 97,
+            "evidence": [
+                "imd.gov.in",
+                "pib.gov.in"
+            ],
+            "sentiment": "panic",
+            "risk": 0.82,
+            "panic_index": {
+                "mumbai": 0.78,
+                "thane": 0.64
+            }
+        },
+        {
+            "id": 2,
+            "claim": "Mumbai local trains will shut down after 4 PM",
+            "status": "FALSE",
+            "confidence": 94,
+            "evidence": [
+                "m.railways.gov.in"
+            ],
+            "sentiment": "fear",
+            "risk": 0.7,
+            "panic_index": {
+                "mumbai": 0.52
+            }
+        },
+        {
+            "id": 3,
+            "claim": "NEET exam postponed due to cyclone",
+            "status": "FAKE",
+            "confidence": 98,
+            "evidence": [
+                "nta.ac.in"
+            ],
+            "sentiment": "anxiety",
+            "risk": 0.88,
+            "panic_index": {
+                "students": 0.9
+            }
+        }
+    ]
+}
