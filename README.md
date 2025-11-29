@@ -27,6 +27,7 @@ The result: *emotion-aware, calming, de-escalating responses* delivered directly
 
 ## 🧠 EchoGuard Architecture
 
+```bash
 echoguard-ai/
 ├── frontend/
 │   ├── app/
@@ -49,6 +50,7 @@ echoguard-ai/
 │   └── demo_data.json
 │
 └── README.md
+```
 
 EchoGuard operates through a continuous three-stage loop:
 
