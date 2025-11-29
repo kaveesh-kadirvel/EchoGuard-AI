@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assest/logo.png">
+    <title>EchoGuard AI - India's Real-time Misinformation Sentinel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-500">
+    <!-- Login Page -->
+    <div id="loginPage" class="min-h-screen flex">
+        <!-- Left Section -->
+        <div
+            class="flex-1 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white p-12 flex flex-col justify-center relative overflow-hidden">
+            <!-- Floating Elements -->
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-white/5 rounded-full blur-3xl floating"></div>
+            <div class="absolute bottom-1/3 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl floating"
+                style="animation-delay: 2s;"></div>
+
+            <!-- Animated Icons -->
+            <div class="absolute top-16 left-16 text-white/20 text-4xl floating">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="absolute top-32 right-20 text-white/20 text-3xl floating" style="animation-delay: 1s;">
+                <i class="fas fa-satellite"></i>
+            </div>
+            <div class="absolute bottom-40 left-20 text-white/20 text-5xl floating" style="animation-delay: 1.5s;">
+                <i class="fas fa-brain"></i>
+            </div>
+            <div class="absolute bottom-20 right-16 text-white/20 text-3xl floating" style="animation-delay: 2.5s;">
+                <i class="fas fa-broadcast-tower"></i>
+            </div>
+
+            <div class="max-w-2xl mx-auto z-10 hero-animation">
+                <div class="flex items-center mb-6">
+                    <div
+                        class="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden flex items-center justify-center mr-3">
+                        <img src="assest/logo.png" alt="Logo" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h1 class="text-5xl font-bold mb-2">EchoGuard AI</h1>
+                        <p class="text-xl opacity-90">India's Real-time Misinformation Sentinel</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-6 mt-12">
+                    <div class="flex items-center p-4 bg-white/10 rounded-xl glass-effect card-animation"
+                        style="animation-delay: 0.2s;">
+                        <i class="fas fa-bolt text-yellow-300 text-2xl mr-4"></i>
+                        <div>
+                            <h3 class="font-semibold">Real-time Detection</h3>
+                            <p class="text-sm opacity-80">Instant misinformation identification</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-4 bg-white/10 rounded-xl glass-effect card-animation"
+                        style="animation-delay: 0.4s;">
+                        <i class="fas fa-language text-green-300 text-2xl mr-4"></i>
+                        <div>
+                            <h3 class="font-semibold">Multilingual Support</h3>
+                            <p class="text-sm opacity-80">Analysis in multiple languages</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-4 bg-white/10 rounded-xl glass-effect card-animation"
+                        style="animation-delay: 0.6s;">
+                        <i class="fas fa-chart-network text-blue-300 text-2xl mr-4"></i>
+                        <div>
+                            <h3 class="font-semibold">Emotion Analysis</h3>
+                            <p class="text-sm opacity-80">Understand public sentiment</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-4 bg-white/10 rounded-xl glass-effect card-animation"
+                        style="animation-delay: 0.8s;">
+                        <i class="fas fa-robot text-purple-300 text-2xl mr-4"></i>
+                        <div>
+                            <h3 class="font-semibold">AI-Powered</h3>
+                            <p class="text-sm opacity-80">Advanced machine learning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Right Section -->
+        <div class="w-1/3 bg-white dark:bg-gray-800 p-12 flex flex-col justify-center">
+            <div class="max-w-md mx-auto w-full">
+                <h2 class="text-3xl font-bold mb-2 dark:text-white">Welcome Back</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-8">Sign in to your EchoGuard AI account</p>
+
+                <div class="space-y-6">
+                    <div class="card-animation" style="animation-delay: 0.3s;">
+                        <label class="block text-sm font-medium mb-2 dark:text-gray-300">Email Address</label>
+                        <input type="email" id="loginEmail" class="form-input" placeholder="Enter your email">
+                    </div>
+
+                    <div class="card-animation" style="animation-delay: 0.4s;">
+                        <label class="block text-sm font-medium mb-2 dark:text-gray-300">Password</label>
+                        <input type="password" id="loginPassword" class="form-input" placeholder="Enter your password">
+                    </div>
+
+                    <button id="loginBtn" class="btn-primary w-full card-animation" style="animation-delay: 0.5s;">
+                        Sign In
+                    </button>
+
+                    <div class="text-center mt-6 card-animation" style="animation-delay: 0.6s;">
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Don't have an account?
+                            <button id="showSignupBtn"
+                                class="text-blue-600 hover:text-blue-800 dark:text-blue-400 font-medium">
+                                Sign up
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Dashboard -->
+    <div id="mainApp" class="min-h-screen flex" style="display: none;">
+        <!-- Sidebar -->
+        <div class="w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col">
+            <!-- Logo -->
+            <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                <div class="flex items-center">
+                    <div
+                        class="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden flex items-center justify-center mr-3">
+                        <img src="assest/logo.png" alt="Logo" class="w-10 h-10 object-contain">
+                    </div>
+                    <div class="font-bold text-2xl dark:text-white gradient-text">EchoGuard AI</div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="flex-1 p-4">
+                <nav class="space-y-1">
+                    <a href="#" class="nav-item active" data-page="dashboard">
+                        <i class="fas fa-home"></i> <span data-translate="dashboard">Dashboard</span>
+                    </a>
+                    <a href="#" class="nav-item" data-page="analytics">
+                        <i class="fas fa-chart-bar"></i> <span data-translate="analytics">Analytics</span>
+                    </a>
+                    <a href="#" class="nav-item" data-page="activityLogs">
+                        <i class="fas fa-history"></i> <span data-translate="activityLogs">Activity Logs</span>
+                    </a>
+                    <a href="#" class="nav-item" data-page="settings">
+                        <i class="fas fa-cog"></i> <span data-translate="settings">Settings</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- User Profile -->
+            <div class="p-4 border-t border-gray-200 dark:border-gray-700">
+                <div class="flex items-center cursor-pointer" id="profileToggle">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center text-white font-bold text-lg mr-3">
+                        <span id="profileInitials">AP</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-semibold dark:text-white" id="profileName">Aarya Pandaram</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400" id="profileRole">Verified Analyst
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-down text-gray-500 dark:text-gray-400 transition-transform"
+                        id="profileArrow"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Header -->
+            <header class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 p-4">
+                <div class="flex items-center justify-between">
+                    <!-- Search Bar -->
+                    <div class="relative w-96">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                        <input type="text" id="searchInput"
+                            class="block w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl bg-gray-50 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all"
+                            placeholder="Search claims, sources, or keywords...">
+                    </div>
+
+                    <!-- Header Actions -->
+                    <div class="flex items-center space-x-4">
+                        <!-- Theme Toggle -->
+                        <button id="themeToggle"
+                            class="w-12 h-12 rounded-2xl flex items-center justify-center text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">
+                            <i class="fas fa-moon text-xl"></i>
+                        </button>
+
+                        <!-- Notifications -->
+                        <div class="relative">
+                            <button
+                                class="w-12 h-12 rounded-2xl flex items-center justify-center text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+                                id="notificationBtn">
+                                <i class="fas fa-bell text-xl"></i>
+                                <span
+                                    class="absolute top-1 right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">3</span>
+                            </button>
+
+                            <!-- Notification Panel -->
+                            <div class="notification-panel" id="notificationPanel">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h3 class="font-semibold dark:text-white">Notifications</h3>
+                                    <button class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                                        <p class="text-sm font-medium dark:text-white">New claim detected</p>
+                                        <p class="text-xs text-gray-600 dark:text-gray-400">2 minutes ago</p>
+                                    </div>
+                                    <div class="p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
+                                        <p class="text-sm font-medium dark:text-white">Analysis completed</p>
+                                        <p class="text-xs text-gray-600 dark:text-gray-400">15 minutes ago</p>
+                                    </div>
+                                    <div class="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                                        <p class="text-sm font-medium dark:text-white">Bulletin shared successfully
+                                        </p>
+                                        <p class="text-xs text-gray-600 dark:text-gray-400">1 hour ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- User Profile (Mobile) -->
+                        <div class="md:hidden">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center text-white font-bold cursor-pointer"
+                                id="mobileProfileToggle">
+                                <span id="mobileProfileInitials">AP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <main class="flex-1 p-6 overflow-auto">
+                <!-- Dashboard Page -->
+                <div id="dashboardPage" class="page active">
+                    <!-- Input Section -->
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 mb-6 card-animation">
+                        <div class="flex items-center justify-between mb-4">
+                            <h2 class="text-2xl font-bold dark:text-white" data-translate="analyzeClaim">Analyze
+                                Misinformation Claim</h2>
+                            <button class="clear-btn" id="clearClaimBtn" data-translate="clear">Clear</button>
+                        </div>
+                        <div class="flex space-x-6">
+                            <div class="flex-1">
+                                <textarea id="claimInput"
+                                    class="w-full h-40 p-5 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-all"
+                                    placeholder="Paste the text claim you want to analyze for misinformation..."></textarea>
+                            </div>
+                            <div class="w-56">
+                                <div class="h-40 border-2 border-dashed border-gray-300 rounded-xl flex flex-col items-center justify-center cursor-pointer hover:border-blue-500 transition-all dark:border-gray-600"
+                                    id="uploadArea">
+                                    <i
+                                        class="fas fa-cloud-upload-alt text-gray-400 text-3xl mb-3 dark:text-gray-500"></i>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400 text-center">Upload
+                                        Image/Video for analysis</span>
+                                </div>
+                                <input type="file" id="fileInput" class="hidden" accept="image/*,video/*">
+                            </div>
+                        </div>
+                        <button id="analyzeBtn" class="btn-primary mt-6">
+                            <i class="fas fa-search mr-3"></i> <span data-translate="analyze">Analyze Claim</span>
+                        </button>
+                    </div>
+
+                    <!-- Dashboard Layout -->
+                    <div class="grid grid-cols-3 gap-6">
+                        <!-- Live Feed Panel -->
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden card-animation"
+                            style="animation-delay: 0.2s;">
+                            <div
+                                class="p-5 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
+                                <h3 class="font-bold text-lg dark:text-white" data-translate="liveFeed">Live Feed
+                                </h3>
+                                <button class="text-blue-600 hover:text-blue-800 dark:text-blue-400 transition-colors">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                            </div>
+                            <div class="p-5 max-h-96 overflow-y-auto">
+                                <!-- Feed Filters -->
+                                <div class="flex space-x-2 mb-5">
+                                    <button
+                                        class="filter-btn active px-4 py-2 bg-blue-100 text-blue-800 rounded-lg text-sm font-medium dark:bg-blue-900 dark:text-blue-200"
+                                        data-translate="all">All</button>
+                                    <button
+                                        class="filter-btn px-4 py-2 bg-gray-100 text-gray-800 rounded-lg text-sm font-medium dark:bg-gray-700 dark:text-gray-300"
+                                        data-translate="twitter">Twitter</button>
+                                    <button
+                                        class="filter-btn px-4 py-2 bg-gray-100 text-gray-800 rounded-lg text-sm font-medium dark:bg-gray-700 dark:text-gray-300"
+                                        data-translate="whatsapp">WhatsApp</button>
+                                    <button
+                                        class="filter-btn px-4 py-2 bg-gray-100 text-gray-800 rounded-lg text-sm font-medium dark:bg-gray-700 dark:text-gray-300"
+                                        data-translate="news">News</button>
+                                </div>
+
+                                <!-- Feed Items -->
+                                <div class="space-y-4" id="feedItems">
+                                    <!-- Feed items will be dynamically added here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Analysis Panel -->
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden card-animation"
+                            style="animation-delay: 0.3s;">
+                            <div
+                                class="p-5 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
+                                <h3 class="font-bold text-lg dark:text-white" data-translate="claimAnalysis">Claim
+                                    Analysis</h3>
+                                <button class="text-blue-600 hover:text-blue-800 dark:text-blue-400 transition-colors">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                            <div class="p-5 max-h-96 overflow-y-auto">
+                                <div class="mb-6">
+                                    <div class="text-lg font-medium mb-4 dark:text-white" id="currentClaim">"Enter a
+                                        claim to analyze it for misinformation"</div>
+
+                                    <div class="flex items-center mb-6" id="verdictSection" style="display: none;">
+                                        <div
+                                            class="px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-medium dark:bg-red-900 dark:text-red-200 mr-4">
+                                            FALSE
+                                        </div>
+                                        <div class="flex-1">
+                                            <div class="flex justify-between text-sm mb-1 dark:text-gray-300">
+                                                <span data-translate="confidence">Confidence</span>
+                                                <span>87%</span>
+                                            </div>
+                                            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 87%">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-6" id="evidenceSection" style="display: none;">
+                                        <h4 class="font-medium mb-3 dark:text-white" data-translate="evidenceSources">
+                                            Evidence Sources</h4>
+                                        <div class="grid grid-cols-2 gap-3" id="evidenceCards">
+                                            <!-- Evidence cards will be dynamically added here -->
+                                        </div>
+                                    </div>
+
+                                    <div id="emotionSection" style="display: none;">
+                                        <h4 class="font-medium mb-3 dark:text-white"
+                                            data-translate="emotionDistribution">Emotion Distribution</h4>
+                                        <div class="grid grid-cols-5 gap-2" id="emotionGrid">
+                                            <!-- Emotion grid will be dynamically added here -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bulletin Generator -->
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden card-animation"
+                            style="animation-delay: 0.4s;">
+                            <div
+                                class="p-5 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
+                                <h3 class="font-bold text-lg dark:text-white" data-translate="bulletinGenerator">
+                                    Bulletin Generator</h3>
+                                <button class="text-blue-600 hover:text-blue-800 dark:text-blue-400 transition-colors">
+                                    <i class="fas fa-expand-arrows-alt"></i>
+                                </button>
+                            </div>
+                            <div class="p-5">
+                                <div
+                                    class="flex border border-gray-300 rounded-xl overflow-hidden mb-5 dark:border-gray-600">
+                                    <button
+                                        class="tab-btn active flex-1 py-3 bg-blue-600 text-white text-sm font-medium"
+                                        data-lang="en">ENG</button>
+                                    <button
+                                        class="tab-btn flex-1 py-3 bg-gray-100 text-gray-800 text-sm font-medium dark:bg-gray-700 dark:text-gray-300"
+                                        data-lang="hi">HIN</button>
+                                    <button
+                                        class="tab-btn flex-1 py-3 bg-gray-100 text-gray-800 text-sm font-medium dark:bg-gray-700 dark:text-gray-300"
+                                        data-lang="mr">MAR</button>
+                                    <button
+                                        class="tab-btn flex-1 py-3 bg-gray-100 text-gray-800 text-sm font-medium dark:bg-gray-700 dark:text-gray-300"
+                                        data-lang="ta">TAM</button>
+                                </div>
+
+                                <div class="bulletin-preview p-5 bg-gray-50 dark:bg-gray-700 rounded-xl mb-5">
+                                    <div class="font-bold mb-3 dark:text-white" data-translate="officialClarification">
+                                        OFFICIAL CLARIFICATION</div>
+                                    <div class="text-sm dark:text-gray-300" id="bulletinContent">
+                                        Enter a claim and analyze it to generate a clarification bulletin.
+                                    </div>
+                                </div>
+
+                                <div class="flex space-x-3">
+                                    <button
+                                        class="action-btn flex-1 py-3 bg-gray-100 text-gray-800 rounded-xl text-sm font-medium flex items-center justify-center transition-all hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+                                        id="copyBulletin">
+                                        <i class="far fa-copy mr-2"></i> <span data-translate="copy">Copy</span>
+                                    </button>
+                                    <button
+                                        class="action-btn flex-1 py-3 bg-gray-100 text-gray-800 rounded-xl text-sm font-medium flex items-center justify-center transition-all hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+                                        id="downloadBulletin">
+                                        <i class="fas fa-download mr-2"></i> <span
+                                            data-translate="download">Download</span>
+                                    </button>
+                                    <button
+                                        class="action-btn flex-1 py-3 bg-blue-600 text-white rounded-xl text-sm font-medium flex items-center justify-center transition-all hover:bg-blue-700"
+                                        id="shareBulletin">
+                                        <i class="fas fa-share-alt mr-2"></i> <span data-translate="share">Share</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Page -->
+                <div id="analyticsPage" class="page">
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                        <h2 class="text-2xl font-bold mb-6 dark:text-white" data-translate="analytics">Analytics
+                            Dashboard</h2>
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2" id="totalClaims">0
+                                </div>
+                                <div class="stat-label" data-translate="claimsAnalyzed">Claims Analyzed</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2"
+                                    id="accuracyRate">0%</div>
+                                <div class="stat-label" data-translate="accuracyRate">Accuracy Rate</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2"
+                                    id="bulletinsCreated">0</div>
+                                <div class="stat-label" data-translate="bulletinsCreated">Bulletins Created</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2"
+                                    id="peopleReached">0</div>
+                                <div class="stat-label" data-translate="peopleReached">People Reached</div>
+                            </div>
+                        </div>
+
+                        <div class="analytics-grid">
+                            <div class="analytics-card">
+                                <h3 class="font-semibold text-lg mb-4 dark:text-white" data-translate="recentClaims">
+                                    Recent Claims Analysis</h3>
+                                <div class="space-y-4" id="recentClaims">
+                                    <!-- Recent claims will be dynamically added here -->
+                                </div>
+                            </div>
+
+                            <div class="analytics-card">
+                                <h3 class="font-semibold text-lg mb-4 dark:text-white"
+                                    data-translate="emotionBreakdown">Emotion Breakdown</h3>
+                                <div class="grid grid-cols-2 gap-4" id="emotionBreakdown">
+                                    <!-- Emotion breakdown will be dynamically added here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Logs Page -->
+                <div id="activityLogsPage" class="page">
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                        <h2 class="text-2xl font-bold mb-6 dark:text-white" data-translate="activityLogs">Activity
+                            Logs
+                        </h2>
+
+                        <div class="agent-timeline" id="activityTimeline">
+                            <!-- Activity logs will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Page -->
+                <div id="settingsPage" class="page">
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+                        <h2 class="text-2xl font-bold mb-6 dark:text-white" data-translate="settings">Settings</h2>
+
+                        <div class="grid grid-cols-2 gap-8">
+                            <div>
+                                <div class="settings-section mb-8">
+                                    <h3 class="font-semibold text-lg mb-4 dark:text-white" data-translate="preferences">
+                                        Preferences</h3>
+                                    <div class="space-y-5">
+                                        <div
+                                            class="toggle-group flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-xl">
+                                            <span class="dark:text-gray-300" data-translate="darkMode">Dark
+                                                Mode</span>
+                                            <label class="relative inline-flex items-center cursor-pointer">
+                                                <input type="checkbox" class="sr-only peer" id="darkModeToggle">
+                                                <div
+                                                    class="w-12 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                        <div
+                                            class="toggle-group flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-xl">
+                                            <span class="dark:text-gray-300" data-translate="emailNotifications">Email
+                                                Notifications</span>
+                                            <label class="relative inline-flex items-center cursor-pointer">
+                                                <input type="checkbox" class="sr-only peer" checked
+                                                    id="emailNotifications">
+                                                <div
+                                                    class="w-12 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                        <div
+                                            class="toggle-group flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-xl">
+                                            <span class="dark:text-gray-300" data-translate="soundAlerts">Sound
+                                                Alerts</span>
+                                            <label class="relative inline-flex items-center cursor-pointer">
+                                                <input type="checkbox" class="sr-only peer" checked id="soundAlerts">
+                                                <div
+                                                    class="w-12 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="settings-section">
+                                    <h3 class="font-semibold text-lg mb-4 dark:text-white"
+                                        data-translate="languagePreferences">Language Preferences</h3>
+                                    <div class="space-y-3">
+                                        <div
+                                            class="language-option flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-xl cursor-pointer transition-all hover:bg-gray-100 dark:hover:bg-gray-600">
+                                            <input type="radio" name="language"
+                                                class="rounded-full text-blue-600 focus:ring-blue-500" value="en"
+                                                checked id="langEnglish">
+                                            <span class="ml-3 dark:text-gray-300">English</span>
+                                        </div>
+                                        <div
+                                            class="language-option flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-xl cursor-pointer transition-all hover:bg-gray-100 dark:hover:bg-gray-600">
+                                            <input type="radio" name="language"
+                                                class="rounded-full text-blue-600 focus:ring-blue-500" value="hi"
+                                                id="langHindi">
+                                            <span class="ml-3 dark:text-gray-300">हिंदी (Hindi)</span>
+                                        </div>
+                                        <div
+                                            class="language-option flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-xl cursor-pointer transition-all hover:bg-gray-100 dark:hover:bg-gray-600">
+                                            <input type="radio" name="language"
+                                                class="rounded-full text-blue-600 focus:ring-blue-500" value="mr"
+                                                id="langMarathi">
+                                            <span class="ml-3 dark:text-gray-300">मराठी (Marathi)</span>
+                                        </div>
+                                        <div
+                                            class="language-option flex items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-xl cursor-pointer transition-all hover:bg-gray-100 dark:hover:bg-gray-600">
+                                            <input type="radio" name="language"
+                                                class="rounded-full text-blue-600 focus:ring-blue-500" value="ta"
+                                                id="langTamil">
+                                            <span class="ml-3 dark:text-gray-300">தமிழ் (Tamil)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="settings-section mb-8">
+                                    <h3 class="font-semibold text-lg mb-4 dark:text-white"
+                                        data-translate="dataManagement">Data Management</h3>
+                                    <div class="space-y-4">
+                                        <button
+                                            class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-3 px-4 rounded-xl transition-all dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white text-left flex items-center"
+                                            id="exportData">
+                                            <i class="fas fa-download mr-3 text-blue-500"></i> <span
+                                                data-translate="exportData">Export Data</span>
+                                        </button>
+                                        <button
+                                            class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-3 px-4 rounded-xl transition-all dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white text-left flex items-center"
+                                            id="clearCache">
+                                            <i class="fas fa-trash-alt mr-3 text-red-500"></i> <span
+                                                data-translate="clearCache">Clear Cache</span>
+                                        </button>
+                                        <button
+                                            class="w-full bg-red-100 hover:bg-red-200 text-red-800 font-medium py-3 px-4 rounded-xl transition-all dark:bg-red-900/20 dark:hover:bg-red-900/30 dark:text-red-400 text-left flex items-center"
+                                            id="resetSettings">
+                                            <i class="fas fa-exclamation-triangle mr-3 text-red-500"></i> <span
+                                                data-translate="resetSettings">Reset All Settings</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="settings-section">
+                                    <h3 class="font-semibold text-lg mb-4 dark:text-white" data-translate="about">
+                                        About
+                                        EchoGuard AI</h3>
+                                    <div class="space-y-2 text-sm dark:text-gray-300">
+                                        <p data-translate="version">Version 2.1.0</p>
+                                        <!-- <p data-translate="lastUpdated">Last updated: November 29,2025</p> -->
+                                        <p data-translate="developedBy">Developed by EchoGuard AI Team</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <div class="flex items-center mb-6">
+                <div
+                    class="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center text-white font-bold text-2xl mr-4">
+                    <span id="modalProfileInitials">AP</span>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold dark:text-white" id="modalProfileName">Aarya Pandaram</h2>
+                    <p class="text-gray-600 dark:text-gray-400" id="modalProfileRole">Verified Analyst</p>
+                </div>
+            </div>
+
+            <div class="space-y-4 mb-6">
+                <div>
+                    <label class="block text-sm font-medium mb-1 dark:text-gray-300"
+                        data-translate="email">Email</label>
+                    <p class="dark:text-white" id="modalProfileEmail">aarya.pandaram@gmail.com</p>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-1 dark:text-gray-300" data-translate="memberSince">Member
+                        Since</label>
+                    <p class="dark:text-white" id="modalProfileJoin">November 29, 2025</p>
+                </div>
+            </div>
+
+            <div class="flex space-x-3">
+                <button class="btn-primary flex-1" id="editProfileBtn">
+                    <i class="fas fa-edit mr-2"></i> <span data-translate="editProfile">Edit Profile</span>
+                </button>
+                <button id="logoutBtn"
+                    class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-3 px-4 rounded-xl transition-all dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white">
+                    <i class="fas fa-sign-out-alt mr-2"></i> <span data-translate="logout">Logout</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <h2 class="text-2xl font-bold mb-6 dark:text-white" data-translate="editProfile">Edit Profile</h2>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-2 dark:text-gray-300" data-translate="fullName">Full
+                        Name</label>
+                    <input type="text" class="form-input" id="editProfileName" value="Aarya Pandaram">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-2 dark:text-gray-300"
+                        data-translate="email">Email</label>
+                    <input type="email" class="form-input" id="editProfileEmail" value="aarya.pandaram@gmail.com">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-2 dark:text-gray-300"
+                        data-translate="profileInitials">Profile Initials</label>
+                    <input type="text" class="form-input" id="editProfileInitials" value="AP" maxlength="2">
+                </div>
+            </div>
+
+            <div class="mt-8 flex space-x-3">
+                <button class="btn-primary flex-1" id="saveProfileBtn">
+                    <span data-translate="saveChanges">Save Changes</span>
+                </button>
+                <button
+                    class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-3 px-4 rounded-xl transition-all dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white"
+                    id="cancelEditProfile">
+                    <span data-translate="cancel">Cancel</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="flex items-center">
+            <i class="fas fa-check-circle text-green-400 mr-3 text-lg"></i>
+            <span id="toastMessage">Operation completed successfully!</span>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <h2 class="text-2xl font-bold mb-6 dark:text-white">Create Account</h2>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-2 dark:text-gray-300">Full Name</label>
+                    <input type="text" id="signupName" class="form-input" placeholder="Enter your full name">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-2 dark:text-gray-300">Email Address</label>
+                    <input type="email" id="signupEmail" class="form-input" placeholder="Enter your email">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-2 dark:text-gray-300">Password</label>
+                    <input type="password" id="signupPassword" class="form-input" placeholder="Create a password">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-2 dark:text-gray-300">Confirm Password</label>
+                    <input type="password" id="signupConfirmPassword" class="form-input"
+                        placeholder="Confirm your password">
+                </div>
+            </div>
+
+            <div class="mt-6 flex space-x-3">
+                <button id="signupBtn" class="btn-primary flex-1">
+                    Create Account
+                </button>
+                <button id="cancelSignup"
+                    class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-3 px-4 rounded-xl transition-all dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
