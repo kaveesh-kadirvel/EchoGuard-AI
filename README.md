@@ -1,12 +1,3 @@
-# EchoGuard-AI
-
-https://github.com/user-attachments/assets/8ccac11b-fee7-4687-b73c-47a85c022868
-
-Here is a **clean, professional, pitch-ready README.md** for your GitHub repository based on the content you provided.
-(It’s formatted in perfect GitHub Markdown and structured like a real production-level project README.)
-
----
-
 # 🚨 EchoGuard AI
 
 ### *India’s Real-time Emotionally Intelligent Misinformation Sentinel*
@@ -35,6 +26,29 @@ The result: *emotion-aware, calming, de-escalating responses* delivered directly
 ---
 
 ## 🧠 EchoGuard Architecture
+
+echoguard-ai/
+├── frontend/
+│   ├── app/
+│   │   ├── login/
+│   │   │   └── page.jsx
+│   │   └── dashboard/
+│   │       └── page.jsx
+│   └── components/
+│       ├── Feed.jsx
+│       ├── Claim.jsx
+│       └── Bulletin.jsx
+│
+├── backend/
+│   ├── main.py
+│   ├── agents.py
+│   ├── sentinel.py
+│   ├── truthseeker.py
+│   ├── echopulse.py
+│   ├── nova.py
+│   └── demo_data.json
+│
+└── README.md
 
 EchoGuard operates through a continuous three-stage loop:
 
@@ -127,14 +141,12 @@ Premium activation during pandemics, elections, terror events, etc.
 
 ## 📦 Tech Stack
 
-*(Modify if needed)*
-
 * **Frontend:** HTML, CSS, JavaScript
 * **Backend:** Python (FastAPI)
 * **AI/ML:** Transformers, RAG, Sentiment & Emotion Models
 * **Databases:** SUPABASE, PostgreSQL
 * **APIs:** News APIs, WHO, SUPABASE, Government datasets
-* **Deployment:** HUGGING FACE
+* **Deployment:** DOCKER
 
 ---
 
